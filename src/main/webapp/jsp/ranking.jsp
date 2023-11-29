@@ -35,6 +35,7 @@ try{
 	String sql = "select me.m_no, me.m_name, count(*) rank "+
 			"from TBL_MEMBER_202005 me, TBL_VOTE_202005 vo "+
 			"where me.m_no = vo.m_no "+
+			"and v_confirm = 'Y' "+
 			"group by me.m_no, me.m_name "+
 			"order by rank desc";
 	pstmt = conn.prepareStatement(sql);
